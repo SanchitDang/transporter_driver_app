@@ -5,6 +5,7 @@ class TripHistoryEntity extends Equatable {
   final String? source;
   final String? destination;
   final GeoPoint? sourceLocation;
+  final GeoPoint? warehouseSourceLocation;
   final GeoPoint? destinationLocation;
   final double? distance;
   final DocumentReference? driverId;
@@ -16,6 +17,7 @@ class TripHistoryEntity extends Equatable {
   final int? tripAmount;
   final double? rating;
   final bool? isArrived;
+  final bool? is_from_admin;
   final bool? ready_for_trip;
 
   const TripHistoryEntity(
@@ -23,6 +25,7 @@ class TripHistoryEntity extends Equatable {
       this.source,
       this.destination,
       this.sourceLocation,
+      this.warehouseSourceLocation,
       this.destinationLocation,
       this.distance,
       this.driverId,
@@ -34,6 +37,7 @@ class TripHistoryEntity extends Equatable {
       this.tripAmount,
       this.rating,
       this.isArrived,
+      this.is_from_admin,
      });
 
   @override
@@ -41,6 +45,7 @@ class TripHistoryEntity extends Equatable {
         source,
         destination,
         sourceLocation,
+        warehouseSourceLocation,
         destinationLocation,
         distance,
         driverId,
@@ -52,6 +57,7 @@ class TripHistoryEntity extends Equatable {
         tripAmount,
         rating,
         isArrived,
+        is_from_admin,
         ready_for_trip
       ];
 }

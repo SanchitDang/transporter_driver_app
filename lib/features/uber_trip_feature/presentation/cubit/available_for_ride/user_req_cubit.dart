@@ -115,6 +115,7 @@ class UserReqCubit extends Cubit<UserReqState> {
                 tripAmount: tripDriver.tripHistoryModel.tripAmount,
                 rating: tripDriver.tripHistoryModel.rating,
                 sourceLocation: tripDriver.tripHistoryModel.sourceLocation,
+                warehouseSourceLocation: tripDriver.tripHistoryModel.warehouseSourceLocation,
                 ready_for_trip: isDriver == true
                     ? accept
                     : tripDriver.tripHistoryModel.ready_for_trip,
@@ -122,6 +123,7 @@ class UserReqCubit extends Cubit<UserReqState> {
                 isArrived: isDriver == true
                     ? tripDriver.tripHistoryModel.isArrived
                     : true,
+                is_from_admin: tripDriver.tripHistoryModel.is_from_admin
               ),
               RiderModel(
                   rider_id: tripDriver.riderModel.rider_id,

@@ -8,6 +8,8 @@ import 'package:transporter_driver_app/features/uber_trip_feature/presentation/c
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/cubit/uber_driver_map/uber_map_cubit.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/widgets/custom_elevated_button.dart';
 
+import 'WarehouseDialog.dart';
+
 void rideRequestBottomSheet(BuildContext context) {
   showModalBottomSheet(
       isScrollControlled: true,
@@ -132,8 +134,7 @@ void rideRequestBottomSheet(BuildContext context) {
                                   CustomElevatedButton(
                                     onPressed: () {
                                       if (state.tripDriver.tripHistoryModel
-                                              .isCompleted ==
-                                          false) {
+                                              .isCompleted == false) {
                                         //fetch all trips assigned to driver
                                         BlocProvider.of<UserReqCubit>(context)
                                             .isAccept(
@@ -141,11 +142,10 @@ void rideRequestBottomSheet(BuildContext context) {
                                       } else if (state
                                                   .tripDriver
                                                   .tripHistoryModel
-                                                  .isCompleted ==
-                                              true &&
+                                                  .isCompleted == true
+                                          &&
                                           state.tripDriver.tripHistoryModel
-                                                  .isArrived ==
-                                              true) {
+                                                  .isArrived == true) {
                                         //when arrived completed trip reset for new ride
                                         BlocProvider.of<UberMapCubit>(context)
                                             .resetMapForNewRide(context);
@@ -159,14 +159,56 @@ void rideRequestBottomSheet(BuildContext context) {
                                             .isAccept(
                                                 state.tripDriver, false, false);
                                       }
+
+                                      //todo add dialog box to send to nearest warehouse
+                                      if(state.tripDriver.tripHistoryModel.is_from_admin == true && state.tripDriver.tripHistoryModel
+                                          .isCompleted == true ) {
+                                        // if trip is set from admin, then
+                                        // send to destination user
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return WarehouseDialog(
+                                              latitude: state.tripDriver
+                                                  .tripHistoryModel
+                                                  .destinationLocation
+                                                  ?.latitude ?? 40.7128,
+                                              longitude: state.tripDriver
+                                                  .tripHistoryModel
+                                                  .destinationLocation
+                                                  ?.longitude ??
+                                                  -74.0060, // Example longitude
+                                            );
+                                          },
+                                        );
+                                      }
+                                      else if (true && state.tripDriver.tripHistoryModel
+                                          .isCompleted == true){
+                                        // send to nearest warehouse
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return WarehouseDialog(
+                                              latitude: state.tripDriver
+                                                  .tripHistoryModel
+                                                  .warehouseSourceLocation
+                                                  ?.latitude ?? 40.7128,
+                                              longitude: state.tripDriver
+                                                  .tripHistoryModel
+                                                  .warehouseSourceLocation
+                                                  ?.longitude ??
+                                                  -74.0060, // Example longitude
+                                            );
+                                          },
+                                        );
+                                      }
+
                                     },
                                     text: state.tripDriver.tripHistoryModel
-                                                .isArrived ==
-                                            false
+                                                .isArrived == false
                                         ? 'ARRIVED'
                                         : state.tripDriver.tripHistoryModel
-                                                    .isCompleted ==
-                                                true
+                                                    .isCompleted == true
                                             ? 'ACCEPT PAYMENT'
                                             : 'COMPLETED',
                                   ),
