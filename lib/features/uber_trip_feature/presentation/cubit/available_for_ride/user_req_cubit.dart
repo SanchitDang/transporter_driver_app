@@ -123,7 +123,8 @@ class UserReqCubit extends Cubit<UserReqState> {
                 isArrived: isDriver == true
                     ? tripDriver.tripHistoryModel.isArrived
                     : true,
-                is_from_admin: tripDriver.tripHistoryModel.is_from_admin
+                is_from_admin: tripDriver.tripHistoryModel.is_from_admin,
+                is_cod: tripDriver.tripHistoryModel.is_cod,
               ),
               RiderModel(
                   rider_id: tripDriver.riderModel.rider_id,

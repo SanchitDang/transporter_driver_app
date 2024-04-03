@@ -19,6 +19,7 @@ class TripHistoryModel extends TripHistoryEntity {
   final bool? isArrived;
   final bool? is_from_admin;
   final bool? ready_for_trip;
+  final bool? is_cod;
 
   factory TripHistoryModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     return TripHistoryModel(
@@ -38,7 +39,9 @@ class TripHistoryModel extends TripHistoryEntity {
         riderId: documentSnapshot.get('rider_id'),
         isArrived: documentSnapshot.get('is_arrived'),
         is_from_admin: documentSnapshot.get('is_from_admin'),
-        ready_for_trip: documentSnapshot.get('ready_for_trip'));
+        ready_for_trip: documentSnapshot.get('ready_for_trip'),
+        is_cod: documentSnapshot.get('is_cod'),
+    );
   }
 
   const TripHistoryModel(
@@ -59,6 +62,7 @@ class TripHistoryModel extends TripHistoryEntity {
       required this.riderId,
       required this.isArrived,
       required this.is_from_admin,
+      required this.is_cod,
      })
       : super();
 
@@ -80,6 +84,7 @@ class TripHistoryModel extends TripHistoryEntity {
       'is_arrived': isArrived,
       'is_from_admin': is_from_admin,
       'ready_for_trip': ready_for_trip,
+      'is_cod': is_cod,
     };
   }
 
@@ -101,6 +106,7 @@ class TripHistoryModel extends TripHistoryEntity {
         rating: double.parse(value['rating'].toString()),
         riderId: value['rider_id'],
         ready_for_trip: value['ready_for_trip'],
+        is_cod: value['is_cod'],
        );
   }
 }

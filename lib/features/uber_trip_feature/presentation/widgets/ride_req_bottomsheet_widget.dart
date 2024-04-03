@@ -160,7 +160,7 @@ void rideRequestBottomSheet(BuildContext context) {
                                                 state.tripDriver, false, false);
                                       }
 
-                                      //todo add dialog box to send to nearest warehouse
+                                      // dialog box to send to nearest warehouse
                                       if(state.tripDriver.tripHistoryModel.is_from_admin == true && state.tripDriver.tripHistoryModel
                                           .isCompleted == true ) {
                                         // if trip is set from admin, then
@@ -209,6 +209,8 @@ void rideRequestBottomSheet(BuildContext context) {
                                         ? 'ARRIVED'
                                         : state.tripDriver.tripHistoryModel
                                                     .isCompleted == true
+                                        && state.tripDriver.tripHistoryModel
+                                        .is_cod == true
                                             ? 'ACCEPT PAYMENT'
                                             : 'COMPLETED',
                                   ),
