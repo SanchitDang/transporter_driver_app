@@ -4,6 +4,9 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:transporter_driver_app/features/uber_auth_feature/presentation/getx/auth_controller.dart';
 import 'package:transporter_driver_app/features/uber_auth_feature/presentation/widgets/uber_auth_phone_verification_body_widget.dart';
 
+import '../../../../config/constants.dart';
+
+
 class PhoneVerificationPage extends StatefulWidget {
   const PhoneVerificationPage({Key? key}) : super(key: key);
 
@@ -95,7 +98,7 @@ class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.black),
+                              MaterialStateProperty.all<Color>(primaryColor),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(

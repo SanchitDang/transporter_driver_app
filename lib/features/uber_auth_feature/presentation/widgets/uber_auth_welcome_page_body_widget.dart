@@ -3,6 +3,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:transporter_driver_app/features/uber_auth_feature/presentation/pages/uber_auth_phone_verification_page.dart';
 
+import '../../../../config/constants.dart';
+
+
 Widget uberAuthTopWelcomeScreenBody() {
   return Column(
     children: [
@@ -48,7 +51,7 @@ Widget uberAuthLoginButton() {
       },
       style: ButtonStyle(
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+        backgroundColor: MaterialStateProperty.all<Color>(primaryColor),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24.0),
