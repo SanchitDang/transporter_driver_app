@@ -13,6 +13,7 @@ import 'package:transporter_driver_app/features/uber_trip_feature/presentation/c
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/cubit/uber_driver_map/uber_map_cubit.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/pages/home_page.dart';
 
+import '../../../../config/constants.dart';
 import '/injection_container.dart' as di;
 
 class UberSplashScreen extends StatefulWidget {
@@ -72,7 +73,7 @@ class _UberSplashScreenState extends State<UberSplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: primaryColor,
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
