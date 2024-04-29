@@ -131,6 +131,13 @@ void rideRequestBottomSheet(BuildContext context) {
                                           ' ${state.tripDriver.tripHistoryModel.travellingTime}')
                                     ],
                                   ),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.shopping_bag_outlined),
+                                      Text(
+                                          ' ${state.tripDriver.tripHistoryModel.number_of_goods}')
+                                    ],
+                                  ),
                                   CustomElevatedButton(
                                     onPressed: () {
                                       if (state.tripDriver.tripHistoryModel

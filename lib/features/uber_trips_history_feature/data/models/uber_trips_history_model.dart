@@ -20,6 +20,7 @@ class TripHistoryModel extends TripHistoryEntity {
   final bool? is_from_admin;
   final bool? ready_for_trip;
   final bool? is_cod;
+  final int? number_of_goods;
 
   factory TripHistoryModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     return TripHistoryModel(
@@ -41,6 +42,7 @@ class TripHistoryModel extends TripHistoryEntity {
         is_from_admin: documentSnapshot.get('is_from_admin'),
         ready_for_trip: documentSnapshot.get('ready_for_trip'),
         is_cod: documentSnapshot.get('is_cod'),
+        number_of_goods: documentSnapshot.get('number_of_goods'),
     );
   }
 
@@ -63,6 +65,7 @@ class TripHistoryModel extends TripHistoryEntity {
       required this.isArrived,
       required this.is_from_admin,
       required this.is_cod,
+      required this.number_of_goods,
      })
       : super();
 
@@ -85,6 +88,7 @@ class TripHistoryModel extends TripHistoryEntity {
       'is_from_admin': is_from_admin,
       'ready_for_trip': ready_for_trip,
       'is_cod': is_cod,
+      'number_of_goods': number_of_goods,
     };
   }
 
@@ -107,6 +111,7 @@ class TripHistoryModel extends TripHistoryEntity {
         riderId: value['rider_id'],
         ready_for_trip: value['ready_for_trip'],
         is_cod: value['is_cod'],
+        number_of_goods: value['number_of_goods'],
        );
   }
 }
