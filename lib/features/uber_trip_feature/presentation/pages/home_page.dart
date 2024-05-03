@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
 import 'package:transporter_driver_app/core/internet/internet_cubit.dart';
 import 'package:transporter_driver_app/core/widgets/loading_widget.dart';
 import 'package:transporter_driver_app/core/widgets/no_internet_widget.dart';
 import 'package:transporter_driver_app/features/uber_profile_feature/presentation/pages/uber_profile_page.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/cubit/driver_live_location/driver_location_cubit.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/cubit/uber_driver_map/uber_map_cubit.dart';
+import 'package:transporter_driver_app/features/uber_trip_feature/presentation/pages/details_controller.dart';
+import 'package:transporter_driver_app/features/uber_trip_feature/presentation/pages/goods_details.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/widgets/functional_button.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/widgets/google_map_widget.dart';
 import 'package:transporter_driver_app/features/uber_trip_feature/presentation/widgets/is_online_widget.dart';
@@ -152,7 +155,9 @@ class _HomePageState extends State<HomePage> {
                                 FunctionalButton(
                                   icon: Icons.search,
                                   title: "",
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    // todo: DEBUG BUTTON
+                                  },
                                 ),
                                 IsOnlineWidget(
                                   online: state.driverModel.is_online == true

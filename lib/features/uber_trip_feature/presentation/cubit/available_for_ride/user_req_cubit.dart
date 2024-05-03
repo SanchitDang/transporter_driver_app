@@ -125,7 +125,8 @@ class UserReqCubit extends Cubit<UserReqState> {
                     : true,
                 is_from_admin: tripDriver.tripHistoryModel.is_from_admin,
                 is_cod: tripDriver.tripHistoryModel.is_cod,
-                number_of_goods:  tripDriver.tripHistoryModel.number_of_goods
+                number_of_goods:  tripDriver.tripHistoryModel.number_of_goods,
+                  goods_info: tripDriver.tripHistoryModel.goods_info,
               ),
               RiderModel(
                   rider_id: tripDriver.riderModel.rider_id,
