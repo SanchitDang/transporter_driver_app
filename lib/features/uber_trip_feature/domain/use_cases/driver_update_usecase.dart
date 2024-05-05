@@ -10,7 +10,6 @@ class DriverUpdateUseCase extends UseCase<TripEntity, Params>{
 
   @override
   Stream<TripEntity>? call(Params params) {
-    // TODO: implement call
     throw UnimplementedError();
   }
 

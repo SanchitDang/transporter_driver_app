@@ -13,7 +13,7 @@ class TripHistoryLoading extends TripHistoryState{
   const TripHistoryLoading();
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [];
 }
 
@@ -24,7 +24,7 @@ class TripHistoryLoaded extends TripHistoryState{
   const TripHistoryLoaded({required this.tripHistoryList});
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [tripHistoryList];
 }
 

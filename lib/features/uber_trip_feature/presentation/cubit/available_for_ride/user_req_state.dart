@@ -7,7 +7,6 @@ abstract class UserReqState  extends Equatable {
 
 class UserReqInitial extends UserReqState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }
 
@@ -16,7 +15,7 @@ class UserReqLoading extends UserReqState{
    UserReqLoading();
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [];
 }
 
@@ -27,7 +26,7 @@ class UserReqLoaded extends UserReqState{
   UserReqLoaded({required this.tripHistoryList});
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [tripHistoryList];
 }
 
@@ -36,7 +35,7 @@ class UserReqDisplayOne extends UserReqState{
   const UserReqDisplayOne({required this.tripDriver});
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [tripDriver];
 }
 

@@ -16,12 +16,10 @@ class InternetConnected extends InternetState {
   const InternetConnected({required this.connectionType});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [connectionType];
 }
 
 class InternetDisconnected extends InternetState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }

@@ -23,7 +23,6 @@ class _UberProfilePageState extends State<UberProfilePage> {
       Get.put(di.sl<UberProfileController>());
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _uberProfileController.getDriverProfile();
   }

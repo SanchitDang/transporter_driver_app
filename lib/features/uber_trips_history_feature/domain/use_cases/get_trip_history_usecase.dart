@@ -15,7 +15,6 @@ class TripHistoryUseCase extends UseCase<List<TripEntity>, Params> {
 
   @override
   Future<void>? call2(Params params) {
-    // TODO: implement call2
     throw UnimplementedError();
   }
 }

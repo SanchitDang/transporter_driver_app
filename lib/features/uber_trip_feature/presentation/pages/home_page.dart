@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                                   icon: Icons.search,
                                   title: "",
                                   onPressed: () {
-                                    // todo: DEBUG BUTTON
+                                    // DEBUG BUTTON
                                   },
                                 ),
                                 IsOnlineWidget(

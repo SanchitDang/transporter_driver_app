@@ -11,7 +11,7 @@ class DriverLocationInitial extends DriverLocationState {
 
 class  DriverLocationLoading extends DriverLocationState{
   @override
-  // TODO: implement props
+
   List<Object?> get props => [];
 }
 
@@ -20,7 +20,7 @@ class  DriverLocationLoaded extends DriverLocationState{
   const DriverLocationLoaded({required this.driverModel});
 
   @override
-  // TODO: implement props
+
   List<Object?> get props => [driverModel];
 }
 
