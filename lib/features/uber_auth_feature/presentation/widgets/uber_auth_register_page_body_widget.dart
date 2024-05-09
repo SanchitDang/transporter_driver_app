@@ -37,8 +37,8 @@ Widget uberRegisterPageBody(
         height: 10,
       ),
       TextFieldWidget(
-        labelText: 'City*',
-        textType: 'Enter your current city',
+        labelText: 'State',
+        textType: 'Enter your current State',
         inputType: TextInputType.text,
         controller: city,
       ),
